@@ -7,13 +7,12 @@ from sklearn.feature_extraction.text import CountVectorizer
 import pickle
 
 df = pd.read_csv('movie.csv')
-
-# similarity_matrix = pickle.load(open('similarity_matrix.pkl','rb'))
+similarity_matrix = pickle.load(open('similarity_matrix.pkl','rb'))
 
 cv = CountVectorizer(stop_words='english')
 
-movie_matrix = cv.fit_transform(df['all']).toarray()
-similarity_matrix = cosine_similarity(movie_matrix)
+#movie_matrix = cv.fit_transform(df['all']).toarray()
+#similarity_matrix = cosine_similarity(movie_matrix)
 
 app = Flask(__name__)
 
